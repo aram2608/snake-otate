@@ -22,4 +22,4 @@ def version():
     print("[bold magenta]snake-otate v0.1.0[/bold magenta]")
 
 if __name__ == "__main__":
-    typer.run(main)
+    app()
