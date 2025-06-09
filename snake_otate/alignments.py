@@ -10,6 +10,10 @@ class Alignments:
     def extract_splice_junctions(self):
         """Function to extract splice junctions from a BAM file."""
         bamfile = pysam.AlignmentFile(self.path, "rb") # mode = rb, reading and compressed, wb writing and compressed
-        iter = bamfile.fetch("seq1", 10, 20)
+        iter = bamfile.fetch()
+        debugging_stop = []
         for i in iter:
             print(str(i))
+            debugging_stop.append(i)
+            if len(debugging_stop) == 10:
+                break

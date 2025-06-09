@@ -3,18 +3,17 @@
 import typer
 from rich import print
 from rich.progress import track
-import time
+
+from snake_otate.annotator_core import AnnotationCore
 
 app = typer.Typer()
+annot = AnnotationCore()
 
 @app.command()
 def annotate(): # bools are automatically options, using "" as a default value will also create a command line option
     """Initial output prior to running."""
     if annotate:
-        print("[bold green] Starting annotation... [/bold green]")
-        for i in track(range(5), description="Processing..."):
-            time.sleep(1)
-        print("[bold cyan] Annotation complete! [/bold cyan]")
+        annot.create_annotations()
 
 @app.command()
 def version():
