@@ -23,10 +23,10 @@ class AnnotationCore:
         if prompt == "n":
             print("[bold red] Stopping annotation... [/bold red]")
 
-    def retrieve_coverage(self):
+    def retrieve_counts(self):
         prompt = input("Return coverage? [y/n]: ")
         if prompt == "y":
             print(f"[bold yellow] Retrieving coverage from {self.path} [/bold yellow]")
-            self.alignments.bam_coverage()
+            self.alignments.read_count_per_region()
         if prompt == "n":
             print("[bold red] Stopping retrieval [/bold red]")

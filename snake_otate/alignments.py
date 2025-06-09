@@ -18,7 +18,7 @@ class Alignments:
             if len(debugging_stop) == 10:
                 break
 
-    def bam_coverage(self):
+    def read_count_per_region(self):
         """Retrieve coverage."""
         bamfile = pysam.AlignmentFile(self.path, "rb")
-        bamfile.count_coverage("CM052345.1")
+        print(bamfile.count("CM052345.1"))

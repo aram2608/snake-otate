@@ -16,10 +16,10 @@ def annotate(): # bools are automatically options, using "" as a default value w
         annot.create_annotations()
 
 @app.command()
-def coverage():
+def region_coverage():
     """Just a toy script to see if I understand how samtools works."""
-    if coverage:
-        annot.retrieve_coverage()
+    if region_coverage:
+        annot.retrieve_counts()
 
 @app.command()
 def version():
