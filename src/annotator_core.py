@@ -3,7 +3,7 @@
 from rich import print
 from rich.progress import track
 
-from snake_otate.alignments import Alignments
+from src.alignments import Alignments
 
 class AnnotationCore:
     """Core logic for creating annotations."""
@@ -30,3 +30,6 @@ class AnnotationCore:
             self.alignments.read_count_per_region()
         if prompt == "n":
             print("[bold red] Stopping retrieval [/bold red]")
+
+    def dummy(self):
+        print(self.alignments.retrieve_headers())

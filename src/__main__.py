@@ -4,10 +4,15 @@ import typer
 from rich import print
 from rich.progress import track
 
-from snake_otate.annotator_core import AnnotationCore
+from src.annotator_core import AnnotationCore
 
 app = typer.Typer()
 annot = AnnotationCore()
+
+@app.command()
+def test():
+    if test:
+        annot.dummy()
 
 @app.command()
 def annotate(): # bools are automatically options, using "" as a default value will also create a command line option
